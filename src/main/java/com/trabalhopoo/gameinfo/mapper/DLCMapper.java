@@ -1,9 +1,7 @@
 package com.trabalhopoo.gameinfo.mapper;
 
 import com.trabalhopoo.gameinfo.dto.DLCDTO;
-import com.trabalhopoo.gameinfo.dto.GameInfoDTO;
 import com.trabalhopoo.gameinfo.entity.DLC;
-import com.trabalhopoo.gameinfo.entity.GameInfo;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
