@@ -11,7 +11,7 @@ public class Game implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
     @Column(nullable = false, unique = true)
     private String name;
@@ -29,16 +29,16 @@ public class Game implements Serializable {
     private String developer;
 
     @Column(nullable = false)
-    private int soldCopies;
+    private Integer soldCopies;
 
     @Column(nullable = false)
     private String distributor;
 
     @Column(columnDefinition = "integer default 0")
-    private int score;
+    private Integer score;
 
     @Column(nullable = false)
-    private float price;
+    private Float price;
 
     @Column(nullable = false)
     private String requirements;
