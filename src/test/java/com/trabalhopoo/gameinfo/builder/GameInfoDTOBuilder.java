@@ -25,7 +25,7 @@ public class GameInfoDTOBuilder {
     @Builder.Default
     private final int score = 99;
     @Builder.Default
-    private final Float price = 196.00F;
+    private final float price = 196.00F;
     @Builder.Default
     private final String requirements = "Intel Core I7, Nvidia Geforce, 64GB RAM";
     @Builder.Default
