@@ -1,11 +1,13 @@
 package com.trabalhopoo.gameinfo.controller;
 
 import com.trabalhopoo.gameinfo.dto.DLCDTO;
+import com.trabalhopoo.gameinfo.dto.GameInfoDTO;
 import com.trabalhopoo.gameinfo.service.DLCService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
+import java.util.List;
 
 
 @RestController
@@ -23,5 +25,10 @@ public class DLCController implements DLCControllerDocs{
     @ResponseStatus(HttpStatus.CREATED)
     public DLCDTO create(@RequestBody @Valid DLCDTO dlcDTO) {
         return dlcService.create(dlcDTO);
+    }
+
+    @GetMapping
+    public List<DLCDTO> findAll() {
+        return dlcService.findAll();
     }
 }

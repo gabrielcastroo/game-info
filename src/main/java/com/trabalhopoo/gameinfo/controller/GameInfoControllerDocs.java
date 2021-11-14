@@ -6,6 +6,8 @@ import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 
+import java.util.List;
+
 @Api("Game Information Management")
 public interface GameInfoControllerDocs {
 
@@ -15,4 +17,18 @@ public interface GameInfoControllerDocs {
             @ApiResponse(code = 400, message = "Missing Required Fields")
     })
     GameInfoDTO create(GameInfoDTO gameInfoDTO);
+
+
+    @ApiOperation(value = "Find Game By ID Operation")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "Success Game Info Found By ID"),
+            @ApiResponse(code = 404, message = "Game Not Found")
+    })
+    GameInfoDTO findById(Long id);
+
+    @ApiOperation(value = "List All Games Operation")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "Success Game Info Listed"),
+    })
+    List<GameInfoDTO> findAll();
 }

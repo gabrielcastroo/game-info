@@ -10,6 +10,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @RestController
 
@@ -27,5 +28,15 @@ public class GameInfoController implements GameInfoControllerDocs{
     @ResponseStatus(HttpStatus.CREATED)
     public GameInfoDTO create(@RequestBody @Valid GameInfoDTO gameInfoDTO) {
         return gameInfoService.create(gameInfoDTO);
+    }
+
+    @GetMapping("/{id}")
+    public GameInfoDTO findById(@PathVariable Long id) {
+        return gameInfoService.findById(id);
+    }
+
+    @GetMapping
+    public List<GameInfoDTO> findAll() {
+        return gameInfoService.findAll();
     }
 }
