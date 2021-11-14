@@ -5,6 +5,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 
@@ -31,4 +32,11 @@ public interface GameInfoControllerDocs {
             @ApiResponse(code = 200, message = "Success Game Info Listed"),
     })
     List<GameInfoDTO> findAll();
+
+    @ApiOperation(value = "Delete Game By ID Operation")
+    @ApiResponses(value = {
+            @ApiResponse(code = 204, message = "Success Game Info Deleted By ID"),
+            @ApiResponse(code = 404, message = "Game Not Found")
+    })
+    void delete(Long id);
 }

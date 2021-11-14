@@ -39,4 +39,10 @@ public class GameInfoController implements GameInfoControllerDocs{
     public List<GameInfoDTO> findAll() {
         return gameInfoService.findAll();
     }
+
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void delete(@PathVariable Long id) {
+        gameInfoService.delete(id);
+    }
 }

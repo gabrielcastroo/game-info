@@ -46,4 +46,9 @@ public class GameInfoService {
                 .collect(Collectors.toList());
     }
 
+    public void delete(Long id){
+        GameInfo foundGame = gameInfoRepository.findById(id)
+                .orElseThrow(()-> new GameInfoNotFoundException(id));
+        gameInfoRepository.deleteById(id);
+    }
 }
