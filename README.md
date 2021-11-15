@@ -11,7 +11,8 @@ Durante o projeto, são utilizadas as seguintes ferramentans:
 * Spring Security
 * Rest API
 * Lombok
-* Mapper
+* MapStruct
+* Mockito
 * Swagger para Documentação 
 * PostMan
 * Princípios de POO
