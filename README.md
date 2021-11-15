@@ -4,15 +4,17 @@
 
 O Objetivo do Projeto é criar uma API com informações gerais de jogos
 
-Durante o projeto, são abordados os seguintes tópicos:
+Durante o projeto, são utilizadas as seguintes ferramentans:
 
-*Java 11 
-*Spring Boot
-*Spring Security
-*Rest
-*Lombok
-*Mapper
-*Swagger para Documentação 
+* Java 11 
+* Spring Boot
+* Spring Security
+* Rest API
+* Lombok
+* Mapper
+* Swagger para Documentação 
+* PostMan
+* Princípios de POO
 
 
 Para executar o projeto no terminal, digite o seguinte comando:
