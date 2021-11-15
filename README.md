@@ -4,7 +4,7 @@
 
 O Objetivo do Projeto é criar uma API com informações gerais de jogos
 
-Durante o projeto, são utilizadas as seguintes ferramentans:
+Durante o projeto, são utilizadas as seguintes ferramentas:
 
 * Java 11 
 * Spring Boot
