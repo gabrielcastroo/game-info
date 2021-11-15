@@ -50,4 +50,5 @@ public class GameInfoController implements GameInfoControllerDocs{
     public GameInfoDTO update(@PathVariable Long id, @RequestBody @Valid GameInfoDTO gameInfoToUpdateDTO) {
         return gameInfoService.update(id, gameInfoToUpdateDTO);
     }
+
 }
