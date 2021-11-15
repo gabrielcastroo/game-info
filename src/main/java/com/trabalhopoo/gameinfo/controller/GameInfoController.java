@@ -7,6 +7,7 @@ import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -24,6 +25,7 @@ public class GameInfoController implements GameInfoControllerDocs{
         this.gameInfoService = gameInfoService;
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public GameInfoDTO create(@RequestBody @Valid GameInfoDTO gameInfoDTO) {
@@ -40,12 +42,14 @@ public class GameInfoController implements GameInfoControllerDocs{
         return gameInfoService.findAll();
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void delete(@PathVariable Long id) {
         gameInfoService.delete(id);
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/{id}")
     public GameInfoDTO update(@PathVariable Long id, @RequestBody @Valid GameInfoDTO gameInfoToUpdateDTO) {
         return gameInfoService.update(id, gameInfoToUpdateDTO);
