@@ -51,4 +51,14 @@ public class GameInfoService {
                 .orElseThrow(()-> new GameInfoNotFoundException(id));
         gameInfoRepository.deleteById(id);
     }
+    public GameInfoDTO update(Long id, GameInfoDTO gameInfoToUpdateDTO) {
+        GameInfo gameInfoFound = gameInfoRepository.findById(id)
+                .orElseThrow(()-> new GameInfoNotFoundException(id));
+
+        gameInfoToUpdateDTO.setId(gameInfoFound.getId());
+
+        GameInfo gameInfoToUpdate = gameInfoMapper.toModel(gameInfoToUpdateDTO);
+        GameInfo updatedGameInfo = gameInfoRepository.save(gameInfoToUpdate);
+        return gameInfoMapper.toDTO(updatedGameInfo);
+    }
 }

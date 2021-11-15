@@ -45,4 +45,9 @@ public class GameInfoController implements GameInfoControllerDocs{
     public void delete(@PathVariable Long id) {
         gameInfoService.delete(id);
     }
+
+    @PutMapping("/{id}")
+    public GameInfoDTO update(@PathVariable Long id, @RequestBody @Valid GameInfoDTO gameInfoToUpdateDTO) {
+        return gameInfoService.update(id, gameInfoToUpdateDTO);
+    }
 }

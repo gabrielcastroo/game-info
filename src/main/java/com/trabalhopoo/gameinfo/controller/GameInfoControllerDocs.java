@@ -5,7 +5,6 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
-import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 
@@ -39,4 +38,11 @@ public interface GameInfoControllerDocs {
             @ApiResponse(code = 404, message = "Game Not Found")
     })
     void delete(Long id);
+
+    @ApiOperation(value = "Game Info Update Operation")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "Success Game Info Created"),
+            @ApiResponse(code = 400, message = "Missing Required Fields")
+    })
+    GameInfoDTO update(Long id, GameInfoDTO gameInfoToUpdateDTO);
 }
