@@ -10,4 +10,5 @@ public class GameinfoApplication {
 		SpringApplication.run(GameinfoApplication.class, args);
 	}
 
+
 }
